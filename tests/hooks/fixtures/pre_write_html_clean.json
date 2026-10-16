@@ -1,0 +1,8 @@
+{
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "runs/run-test-001/output/event-plan.html",
+    "content": "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Event plan</title></head><body><h1>Event plan</h1><p>Birthday party in Warsaw.</p></body></html>\n"
+  }
+}

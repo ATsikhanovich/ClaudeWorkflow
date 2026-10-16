@@ -1,0 +1,22 @@
+# Secrets and local environment
+.env
+.env.local
+*.key
+*.pem
+
+# Claude Code local settings (per-user, not shared)
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp

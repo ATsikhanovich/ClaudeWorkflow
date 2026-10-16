@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "run_id": "run-000-example",
+  "created_at": "2026-01-01T00:00:00Z",
+  "updated_at": "2026-01-01T00:00:00Z",
+  "current_step": "requirements",
+  "requirements_hash": null,
+  "execution_plan": [
+    {
+      "step": 1,
+      "name": "requirements",
+      "agents": ["requirements-formalizer"],
+      "depends_on": [],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 2,
+      "name": "recon",
+      "agents": ["venue-planner", "weather"],
+      "depends_on": [1],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 3,
+      "name": "services",
+      "agents": ["catering-planner", "entertainment-planner", "logistics-planner"],
+      "depends_on": [2],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 4,
+      "name": "schedule-and-cost",
+      "agents": ["timeline-planner", "budget-aggregator"],
+      "depends_on": [3],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 5,
+      "name": "validation",
+      "agents": ["validator"],
+      "depends_on": [4],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 6,
+      "name": "synthesis",
+      "agents": ["event-plan-builder"],
+      "depends_on": [5],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 7,
+      "name": "approval",
+      "agents": [],
+      "depends_on": [6],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 8,
+      "name": "html",
+      "agents": ["html-builder"],
+      "depends_on": [7],
+      "status": "done",
+      "attempts": 1
+    }
+  ],
+  "artifacts": {
+    "artifacts/01-requirements.md": {
+      "owner": "requirements-formalizer",
+      "status": "done",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    "output/event-plan.html": {
+      "owner": "html-builder",
+      "status": "pending",
+      "sha256": null,
+      "updated_at": null
+    }
+  },
+  "gate_results": {
+    "G1": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null},
+    "G2": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null},
+    "G3": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null},
+    "G4": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null},
+    "G5": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null},
+    "G6": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null},
+    "G7": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null},
+    "G8": {"status": "PASS", "attempts": 1, "findings": [], "responsible_agent": null}
+  },
+  "retry_counters": {
+    "G1": 0, "G2": 0, "G3": 0, "G4": 0, "G5": 0, "G6": 0, "G7": 0, "G8": 0
+  },
+  "approval": {
+    "status": "pending",
+    "approved_at": null,
+    "plan_sha256": null,
+    "rejected_count": 0,
+    "feedback": []
+  },
+  "notes": []
+}

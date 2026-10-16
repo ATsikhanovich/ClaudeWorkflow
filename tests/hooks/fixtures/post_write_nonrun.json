@@ -1,0 +1,11 @@
+{
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "notes.md",
+    "content": "scratch notes, not part of any run\n"
+  },
+  "tool_response": {
+    "filePath": "notes.md"
+  }
+}

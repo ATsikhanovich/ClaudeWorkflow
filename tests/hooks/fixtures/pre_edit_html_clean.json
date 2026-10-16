@@ -1,0 +1,9 @@
+{
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Edit",
+  "tool_input": {
+    "file_path": "runs/run-test-001/output/event-plan.html",
+    "old_string": "<h1>Event plan</h1>",
+    "new_string": "<h1>Final event plan</h1>"
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "run_id": "run-002-corporate-offsite",
+  "created_at": "2026-10-10T09:00:00Z",
+  "updated_at": "2026-10-10T21:23:46Z",
+  "current_step": "html",
+  "requirements_hash": "6cdde3d75cead8384ab6d1da705cdb0108f0bf3e6c14c27ee4708b1581bb3559",
+  "execution_plan": [
+    {
+      "step": 1,
+      "name": "requirements",
+      "agents": [
+        "requirements-formalizer"
+      ],
+      "depends_on": [],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 2,
+      "name": "recon",
+      "agents": [
+        "venue-planner",
+        "weather"
+      ],
+      "depends_on": [
+        1
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 3,
+      "name": "services",
+      "agents": [
+        "catering-planner",
+        "entertainment-planner",
+        "logistics-planner"
+      ],
+      "depends_on": [
+        2
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 4,
+      "name": "schedule-and-cost",
+      "agents": [
+        "timeline-planner",
+        "budget-aggregator"
+      ],
+      "depends_on": [
+        3
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 5,
+      "name": "validation",
+      "agents": [
+        "validator"
+      ],
+      "depends_on": [
+        4
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 6,
+      "name": "synthesis",
+      "agents": [
+        "event-plan-builder"
+      ],
+      "depends_on": [
+        5
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 7,
+      "name": "approval",
+      "agents": [],
+      "depends_on": [
+        6
+      ],
+      "status": "running",
+      "attempts": 1
+    },
+    {
+      "step": 8,
+      "name": "html",
+      "agents": [
+        "html-builder"
+      ],
+      "depends_on": [
+        7
+      ],
+      "status": "pending",
+      "attempts": 0
+    }
+  ],
+  "artifacts": {
+    "artifacts/01-requirements.md": {
+      "owner": "requirements-formalizer",
+      "status": "done",
+      "sha256": "6cdde3d75cead8384ab6d1da705cdb0108f0bf3e6c14c27ee4708b1581bb3559",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/02-venue.md": {
+      "owner": "venue-planner",
+      "status": "done",
+      "sha256": "ada630e7df66700a216a7fb11b8ebdec191cabdc7b59c30d17f5566a3155e648",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/02-weather.md": {
+      "owner": "weather",
+      "status": "done",
+      "sha256": "7d916a4cc2675ea5663a60b864977bc167a5e2b1b1247d0e186b3e8ce127ba0e",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/03-catering.md": {
+      "owner": "catering-planner",
+      "status": "done",
+      "sha256": "3db2f1c664d304290202dc8ed6d33369846e164f47dfec64843ac5aea116ee3c",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/03-entertainment.md": {
+      "owner": "entertainment-planner",
+      "status": "done",
+      "sha256": "f67f08017377ed96904ea4e379108222a534550f16c6985ac1610e71f73d8b51",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/03-logistics.md": {
+      "owner": "logistics-planner",
+      "status": "done",
+      "sha256": "68b8383ba8a61b890134f7e42878ed74de18e42d96a88a7818387b78d04fff68",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/04-timeline.md": {
+      "owner": "timeline-planner",
+      "status": "done",
+      "sha256": "2bae018546ec6e2db5262e1cc6315eec8bb660ebfd7f90ceec859e6e849c51ff",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/04-budget.md": {
+      "owner": "budget-aggregator",
+      "status": "done",
+      "sha256": "42444c7ecb6338045172862e79d1819e516d7693902d2a638fb302c898b17c8e",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/05-validation.md": {
+      "owner": "validator",
+      "status": "done",
+      "sha256": "3a655f5254fdc20d726909e164febf8df29173ff001aa66e4dcc92ac468bcfcc",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/06-event-plan.md": {
+      "owner": "event-plan-builder",
+      "status": "done",
+      "sha256": "ee48a14dd329c83855d83cd1a2d69cda2244979ead05eaf80933c8db05de5416",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "output/event-plan.html": {
+      "owner": "html-builder",
+      "status": "done",
+      "sha256": "77065309b072ff133f4abf22eaa7fece58afea1ab523f48cba5bdba9551c9767",
+      "updated_at": "2026-10-10T21:23:46Z"
+    }
+  },
+  "gate_results": {
+    "G1": {
+      "status": "PASS",
+      "attempts": 2,
+      "findings": [
+        "attempt 1: total 25 016.25 PLN over the 20 000 PLN hard ceiling (catering 13 200 PLN) -> FAIL",
+        "targeted retry: catering-planner re-run with these findings; timeline and budget regenerated; attempt 2 total 19 808.25 PLN -> PASS"
+      ],
+      "responsible_agent": "catering-planner"
+    },
+    "G2": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G3": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G4": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G5": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G6": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "Indoor fallback (orangery/rooms) agreed in parallel with the outdoor plan"
+      ],
+      "responsible_agent": null
+    },
+    "G7": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G8": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    }
+  },
+  "retry_counters": {
+    "G1": 1,
+    "G2": 0,
+    "G3": 0,
+    "G4": 0,
+    "G5": 0,
+    "G6": 0,
+    "G7": 0,
+    "G8": 0
+  },
+  "approval": {
+    "status": "approved",
+    "approved_at": "2026-10-10T21:21:14Z",
+    "plan_sha256": "ee48a14dd329c83855d83cd1a2d69cda2244979ead05eaf80933c8db05de5416",
+    "rejected_count": 0,
+    "feedback": []
+  },
+  "notes": [
+    "Gate G1 retry 1/3: responsible agent catering-planner re-run with validator findings; downstream timeline-planner and budget-aggregator regenerated; re-validated PASS on attempt 2.",
+    "Plan adaptation: entertainment-planner executed as team-building planner (live music explicitly excluded by requirements).",
+    "Approval requested from the human operator; awaiting /approve-event or /reject-event."
+  ]
+}

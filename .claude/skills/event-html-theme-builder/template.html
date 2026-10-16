@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{EVENT_TITLE}} — Event Plan</title>
+<style>
+  :root {
+    --ink: #1f2430;
+    --muted: #5b6472;
+    --line: #dde2ea;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --accent: #2f6fde;
+    --accent-ink: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+  }
+  header.site {
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 2.2rem 1.25rem 1.8rem;
+    text-align: center;
+  }
+  header.site h1 { margin: 0 0 .35rem; font-size: 2rem; letter-spacing: .01em; }
+  header.site p { margin: 0; opacity: .92; }
+  main {
+    max-width: 920px;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1.25rem;
+    display: grid;
+    gap: 1.1rem;
+  }
+  section.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.25rem 1.4rem;
+  }
+  section.card h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--line);
+    padding-bottom: .45rem;
+  }
+  p:first-of-type { margin-top: 0; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { border: 1px solid var(--line); padding: .5rem .65rem; text-align: left; vertical-align: top; }
+  thead th { background: var(--bg); }
+  tfoot td { font-weight: 700; background: var(--bg); }
+  ul { margin: .4rem 0 0; padding-left: 1.2rem; }
+  li { margin: .25rem 0; }
+  .note { color: var(--muted); font-size: .92rem; }
+  footer.site {
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+    padding: 1rem 1.25rem 2rem;
+  }
+  @media (max-width: 640px) {
+    header.site h1 { font-size: 1.55rem; }
+    section.card { padding: 1rem; }
+  }
+  @media print {
+    body { background: #fff; color: #000; }
+    header.site { background: #fff; color: #000; border-bottom: 2px solid #000; }
+    section.card { border: none; border-bottom: 1px solid #999; border-radius: 0; padding: .6rem 0; break-inside: avoid; }
+    .table-wrap { overflow: visible; }
+    a { color: #000; text-decoration: underline; }
+    footer.site { color: #000; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <h1>{{EVENT_TITLE}}</h1>
+  <p>{{EVENT_SUBTITLE}}</p>
+</header>
+<main>
+  <section class="card" id="overview">
+    <h2>Overview</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          {{OVERVIEW_ROWS}}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="venue">
+    <h2>Venue</h2>
+    {{VENUE_HTML}}
+  </section>
+
+  <section class="card" id="weather">
+    <h2>Weather outlook &amp; contingency</h2>
+    {{WEATHER_HTML}}
+  </section>
+
+  <section class="card" id="catering">
+    <h2>Catering</h2>
+    {{CATERING_HTML}}
+  </section>
+
+  <section class="card" id="entertainment">
+    <h2>Entertainment</h2>
+    {{ENTERTAINMENT_HTML}}
+  </section>
+
+  <section class="card" id="logistics">
+    <h2>Logistics</h2>
+    {{LOGISTICS_HTML}}
+  </section>
+
+  <section class="card" id="run-of-show">
+    <h2>Run of show</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Time</th><th scope="col">Activity</th><th scope="col">Owner</th><th scope="col">Notes</th></tr>
+        </thead>
+        <tbody>
+          {{TIMELINE_ROWS}}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="budget">
+    <h2>Budget</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Category</th><th scope="col">Amount</th></tr>
+        </thead>
+        <tbody>
+          {{BUDGET_ROWS}}
+        </tbody>
+        <tfoot>
+          <tr><td>Total</td><td>{{BUDGET_TOTAL}}</td></tr>
+          <tr><td>Budget limit</td><td>{{BUDGET_LIMIT}}</td></tr>
+          <tr><td>Headroom</td><td>{{BUDGET_DELTA}}</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="risks">
+    <h2>Risks &amp; notes</h2>
+    {{RISKS_HTML}}
+  </section>
+
+  <section class="card" id="sources">
+    <h2>Sources</h2>
+    <ul>
+      {{SOURCE_ITEMS}}
+    </ul>
+    <p class="note">Every recommendation above is backed by the pages listed here.</p>
+  </section>
+</main>
+<footer class="site">
+  <p>Event plan prepared {{GENERATED_DATE}} — details were confirmed with the organizer before publication.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "runs/run-test-001/artifacts/01-requirements.md",
+    "content": "# Requirements\n\n- **Owner agent:** requirements-formalizer\n"
+  },
+  "tool_response": {
+    "filePath": "runs/run-test-001/artifacts/01-requirements.md"
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "run_id": "run-003-small-anniversary",
+  "created_at": "2026-10-10T09:00:00Z",
+  "updated_at": "2026-10-10T21:23:46Z",
+  "current_step": "html",
+  "requirements_hash": "212c24eff3569347860701ff9a99bf3fbed2a66d426ac96976d4b5b92774cd3d",
+  "execution_plan": [
+    {
+      "step": 1,
+      "name": "requirements",
+      "agents": [
+        "requirements-formalizer"
+      ],
+      "depends_on": [],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 2,
+      "name": "recon",
+      "agents": [
+        "venue-planner",
+        "weather"
+      ],
+      "depends_on": [
+        1
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 3,
+      "name": "services",
+      "agents": [
+        "catering-planner",
+        "entertainment-planner",
+        "logistics-planner"
+      ],
+      "depends_on": [
+        2
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 4,
+      "name": "schedule-and-cost",
+      "agents": [
+        "timeline-planner",
+        "budget-aggregator"
+      ],
+      "depends_on": [
+        3
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 5,
+      "name": "validation",
+      "agents": [
+        "validator"
+      ],
+      "depends_on": [
+        4
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 6,
+      "name": "synthesis",
+      "agents": [
+        "event-plan-builder"
+      ],
+      "depends_on": [
+        5
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 7,
+      "name": "approval",
+      "agents": [],
+      "depends_on": [
+        6
+      ],
+      "status": "running",
+      "attempts": 2
+    },
+    {
+      "step": 8,
+      "name": "html",
+      "agents": [
+        "html-builder"
+      ],
+      "depends_on": [
+        7
+      ],
+      "status": "pending",
+      "attempts": 0
+    }
+  ],
+  "artifacts": {
+    "artifacts/01-requirements.md": {
+      "owner": "requirements-formalizer",
+      "status": "done",
+      "sha256": "212c24eff3569347860701ff9a99bf3fbed2a66d426ac96976d4b5b92774cd3d",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/02-venue.md": {
+      "owner": "venue-planner",
+      "status": "done",
+      "sha256": "bfc2096d9fe5742f46efa38ba9c693331ab34cd7561b94303f2589e82f73af32",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/02-weather.md": {
+      "owner": "weather",
+      "status": "done",
+      "sha256": "bfae52e738c003ac826839183ac86cca3230440d7f3ec752e33a9ced3cd4d7f3",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/03-catering.md": {
+      "owner": "catering-planner",
+      "status": "done",
+      "sha256": "e41a4a1d4650a1f25dac1203f104f500a4d8564caf8c63d4edafb87096ed41b1",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/03-entertainment.md": {
+      "owner": "entertainment-planner",
+      "status": "done",
+      "sha256": "b21615f59fff00c1eb696322ad0bd5c05e643381cf0fbcc75b6c8c6f30a2c8ae",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/03-logistics.md": {
+      "owner": "logistics-planner",
+      "status": "done",
+      "sha256": "ea82eeb54b65faac300b87d63eec1c72fae62842e6a4ee3b42d0d28430019299",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/04-timeline.md": {
+      "owner": "timeline-planner",
+      "status": "done",
+      "sha256": "561c877a0738fc8e2c67ee519e64443b3d45fa5c06b58932eb18cc0e8780c335",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/04-budget.md": {
+      "owner": "budget-aggregator",
+      "status": "done",
+      "sha256": "40820e0d221d3cda10c79b143d8b8102c27206f9ed20f90ac117907ca0d6a9d5",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/05-validation.md": {
+      "owner": "validator",
+      "status": "done",
+      "sha256": "d51365a4f5cdab8598b5e77f10d63fd158ab2c20a81bef22f82b3c824dd01b27",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "artifacts/06-event-plan.md": {
+      "owner": "event-plan-builder",
+      "status": "done",
+      "sha256": "85cb5fed0abaa25bf990f63600b3404c3dc8d94f6f6fc658ce1d16b27aa17b5a",
+      "updated_at": "2026-10-10T21:19:21Z"
+    },
+    "output/event-plan.html": {
+      "owner": "html-builder",
+      "status": "done",
+      "sha256": "a37d527b1c3785dc4fee40ef58486c2056e2684f16495d03c0a938f0b80ea19d",
+      "updated_at": "2026-10-10T21:23:46Z"
+    }
+  },
+  "gate_results": {
+    "G1": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G2": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G3": {
+      "status": "PASS",
+      "attempts": 2,
+      "findings": [
+        "attempt 1: dietary requirements covered; no accessibility requirement existed",
+        "after human review feedback: attempt 2 also covers step-free route, wide-aisle seating and cloakroom assistance for one guest with a walking aid"
+      ],
+      "responsible_agent": "logistics-planner"
+    },
+    "G4": {
+      "status": "PASS",
+      "attempts": 2,
+      "findings": [
+        "timeline regenerated after the review feedback (arrival 30 min earlier)"
+      ],
+      "responsible_agent": null
+    },
+    "G5": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "entertainment explicitly not required - artifact records Not applicable with reason"
+      ],
+      "responsible_agent": null
+    },
+    "G6": {
+      "status": "PASS-N/A",
+      "attempts": 1,
+      "findings": [
+        "Not applicable - indoor restaurant dinner; weather outlook recorded"
+      ],
+      "responsible_agent": null
+    },
+    "G7": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G8": {
+      "status": "PASS",
+      "attempts": 2,
+      "findings": [
+        "re-checked after the revision round"
+      ],
+      "responsible_agent": null
+    }
+  },
+  "retry_counters": {
+    "G1": 0,
+    "G2": 0,
+    "G3": 0,
+    "G4": 0,
+    "G5": 0,
+    "G6": 0,
+    "G7": 0,
+    "G8": 0
+  },
+  "approval": {
+    "status": "approved",
+    "approved_at": "2026-10-10T21:21:14Z",
+    "plan_sha256": "85cb5fed0abaa25bf990f63600b3404c3dc8d94f6f6fc658ce1d16b27aa17b5a",
+    "rejected_count": 1,
+    "feedback": [
+      {
+        "at": "2026-10-10T21:19:21Z",
+        "feedback": "Please add accessibility information - one guest uses a walking aid (step-free access, seating with a wide aisle) - and move guest arrival 30 minutes earlier so dinner can start on time."
+      }
+    ]
+  },
+  "notes": [
+    "rejected at 2026-10-10T21:19:21Z: Please add accessibility information - one guest uses a walking aid (step-free access, seating with a wide aisle) - and move guest arrival 30 minutes earlier so dinner can start on time.",
+    "Plan adaptation: entertainment-planner skipped - no entertainment required (artifact written as Not applicable with the reason; structure preserved).",
+    "Human review round 1: rejection feedback recorded; logistics-planner and timeline-planner re-run; synthesis regenerated; re-validated PASS. (Revision driven by human feedback, not by a gate retry.)",
+    "Approval requested from the human operator; awaiting /approve-event or /reject-event."
+  ]
+}

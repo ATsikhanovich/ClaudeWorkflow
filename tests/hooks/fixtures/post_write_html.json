@@ -1,0 +1,11 @@
+{
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "runs/run-test-001/output/event-plan.html",
+    "content": "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Event plan</title></head><body><h1>Event plan</h1></body></html>\n"
+  },
+  "tool_response": {
+    "filePath": "runs/run-test-001/output/event-plan.html"
+  }
+}

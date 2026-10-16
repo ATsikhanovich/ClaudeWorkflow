@@ -1,0 +1,11 @@
+{
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "runs/run-test-001/artifacts/02-venue.md",
+    "content": "# Venue\n\n- **Owner agent:** venue-planner\n"
+  },
+  "tool_response": {
+    "filePath": "runs/run-test-001/artifacts/02-venue.md"
+  }
+}

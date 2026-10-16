@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "run_id": "run-001-birthday",
+  "created_at": "2026-10-10T09:00:00Z",
+  "updated_at": "2026-10-10T21:23:46Z",
+  "current_step": "html",
+  "requirements_hash": "7e8c8687b80fd593af8ceb646ee0bb2b2cc19ee6026055c45487b800cdad5050",
+  "execution_plan": [
+    {
+      "step": 1,
+      "name": "requirements",
+      "agents": [
+        "requirements-formalizer"
+      ],
+      "depends_on": [],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 2,
+      "name": "recon",
+      "agents": [
+        "venue-planner",
+        "weather"
+      ],
+      "depends_on": [
+        1
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 3,
+      "name": "services",
+      "agents": [
+        "catering-planner",
+        "entertainment-planner",
+        "logistics-planner"
+      ],
+      "depends_on": [
+        2
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 4,
+      "name": "schedule-and-cost",
+      "agents": [
+        "timeline-planner",
+        "budget-aggregator"
+      ],
+      "depends_on": [
+        3
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 5,
+      "name": "validation",
+      "agents": [
+        "validator"
+      ],
+      "depends_on": [
+        4
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 6,
+      "name": "synthesis",
+      "agents": [
+        "event-plan-builder"
+      ],
+      "depends_on": [
+        5
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 7,
+      "name": "approval",
+      "agents": [],
+      "depends_on": [
+        6
+      ],
+      "status": "running",
+      "attempts": 1
+    },
+    {
+      "step": 8,
+      "name": "html",
+      "agents": [
+        "html-builder"
+      ],
+      "depends_on": [
+        7
+      ],
+      "status": "pending",
+      "attempts": 0
+    }
+  ],
+  "artifacts": {
+    "artifacts/01-requirements.md": {
+      "owner": "requirements-formalizer",
+      "status": "done",
+      "sha256": "7e8c8687b80fd593af8ceb646ee0bb2b2cc19ee6026055c45487b800cdad5050",
+      "updated_at": "2026-10-10T21:19:19Z"
+    },
+    "artifacts/02-venue.md": {
+      "owner": "venue-planner",
+      "status": "done",
+      "sha256": "0fd7fc3475a0827ff57113ab6a8c62ade8cc8b8085f51b361574bdfaad8cda23",
+      "updated_at": "2026-10-10T21:19:19Z"
+    },
+    "artifacts/02-weather.md": {
+      "owner": "weather",
+      "status": "done",
+      "sha256": "5e799a086ce0a8a89b1bd2d65a55934be7d12f0b646a04e7cb0c9183b69ed7b6",
+      "updated_at": "2026-10-10T21:19:19Z"
+    },
+    "artifacts/03-catering.md": {
+      "owner": "catering-planner",
+      "status": "done",
+      "sha256": "11a2927ecf15d6c6f8725cf16a4a301db4b489889490b404f4dbcdebf41b05e3",
+      "updated_at": "2026-10-10T21:19:19Z"
+    },
+    "artifacts/03-entertainment.md": {
+      "owner": "entertainment-planner",
+      "status": "done",
+      "sha256": "0de18f16e5b4adc594b7a5b67d342ec9351dc9b4b4a2aa7b9ed534fe4813df12",
+      "updated_at": "2026-10-10T21:19:19Z"
+    },
+    "artifacts/03-logistics.md": {
+      "owner": "logistics-planner",
+      "status": "done",
+      "sha256": "67baec1afb6f4b590ad0d17b15c4ddfd1d3af668aa093ab95a859498f9e03b88",
+      "updated_at": "2026-10-10T21:19:19Z"
+    },
+    "artifacts/04-timeline.md": {
+      "owner": "timeline-planner",
+      "status": "done",
+      "sha256": "6e3bf03f2a122796de097aa56cad4dae6532e5df4b1b015ba7cd702991d5a62b",
+      "updated_at": "2026-10-10T21:19:19Z"
+    },
+    "artifacts/04-budget.md": {
+      "owner": "budget-aggregator",
+      "status": "done",
+      "sha256": "41db5e2e993c9dea1c8c88d7f52d88530d10e5c61985335c0daf7aa05e094487",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/05-validation.md": {
+      "owner": "validator",
+      "status": "done",
+      "sha256": "46c841e72551bbd4b6d32943ab2809d48e1ef22519d89aa4a5777ccaf970d287",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "artifacts/06-event-plan.md": {
+      "owner": "event-plan-builder",
+      "status": "done",
+      "sha256": "a694efc85e9e7bffd8943cb93cc8b03bede536727cfc2652620703db622b2523",
+      "updated_at": "2026-10-10T21:19:20Z"
+    },
+    "output/event-plan.html": {
+      "owner": "html-builder",
+      "status": "done",
+      "sha256": "1228d381fdfc8c0778f5fe3948ddc495bbe0c69218e02186bb7eb3d3d5a4f498",
+      "updated_at": "2026-10-10T21:23:46Z"
+    }
+  },
+  "gate_results": {
+    "G1": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G2": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G3": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G4": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G5": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G6": {
+      "status": "PASS-N/A",
+      "attempts": 1,
+      "findings": [
+        "Not applicable - indoor event; weather outlook recorded"
+      ],
+      "responsible_agent": null
+    },
+    "G7": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    },
+    "G8": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [],
+      "responsible_agent": null
+    }
+  },
+  "retry_counters": {
+    "G1": 0,
+    "G2": 0,
+    "G3": 0,
+    "G4": 0,
+    "G5": 0,
+    "G6": 0,
+    "G7": 0,
+    "G8": 0
+  },
+  "approval": {
+    "status": "approved",
+    "approved_at": "2026-10-10T21:21:14Z",
+    "plan_sha256": "a694efc85e9e7bffd8943cb93cc8b03bede536727cfc2652620703db622b2523",
+    "rejected_count": 0,
+    "feedback": []
+  },
+  "notes": [
+    "Plan adaptation: entertainment planned as a live acoustic duo per confirmed requirements.",
+    "Plan adaptation: G6 recorded PASS-N/A - indoor event (reason in the weather artifact).",
+    "Approval requested from the human operator; awaiting /approve-event or /reject-event."
+  ]
+}

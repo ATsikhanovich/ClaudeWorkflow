@@ -1,0 +1,8 @@
+{
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "elsewhere/output/event-plan.html",
+    "content": "<!doctype html>\n<html><body><h1>Event plan</h1></body></html>\n"
+  }
+}

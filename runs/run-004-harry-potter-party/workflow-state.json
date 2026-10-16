@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "run_id": "run-004-harry-potter-party",
+  "created_at": "2026-10-15T20:37:00Z",
+  "updated_at": "2026-10-15T22:06:08Z",
+  "current_step": "html",
+  "requirements_hash": "062fc68914e3ae05d467208b2ba455513243a5644bc62c931224d49ae6682811",
+  "execution_plan": [
+    {
+      "step": 1,
+      "name": "requirements",
+      "agents": [
+        "requirements-formalizer"
+      ],
+      "depends_on": [],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 2,
+      "name": "recon",
+      "agents": [
+        "venue-planner",
+        "weather"
+      ],
+      "depends_on": [
+        1
+      ],
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "step": 3,
+      "name": "services",
+      "agents": [
+        "catering-planner",
+        "entertainment-planner",
+        "logistics-planner"
+      ],
+      "depends_on": [
+        2
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 4,
+      "name": "schedule-and-cost",
+      "agents": [
+        "timeline-planner",
+        "budget-aggregator"
+      ],
+      "depends_on": [
+        3
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 5,
+      "name": "validation",
+      "agents": [
+        "validator"
+      ],
+      "depends_on": [
+        4
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 6,
+      "name": "synthesis",
+      "agents": [
+        "event-plan-builder"
+      ],
+      "depends_on": [
+        5
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 7,
+      "name": "approval",
+      "agents": [],
+      "depends_on": [
+        6
+      ],
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "step": 8,
+      "name": "html",
+      "agents": [
+        "html-builder"
+      ],
+      "depends_on": [
+        7
+      ],
+      "status": "running",
+      "attempts": 1
+    }
+  ],
+  "artifacts": {
+    "artifacts/01-requirements.md": {
+      "owner": "requirements-formalizer",
+      "status": "done",
+      "sha256": "062fc68914e3ae05d467208b2ba455513243a5644bc62c931224d49ae6682811",
+      "updated_at": "2026-10-15T20:47:38Z"
+    },
+    "artifacts/02-weather.md": {
+      "owner": "weather",
+      "status": "done",
+      "sha256": "409bd40f002d6b43f80abc5365018e02c25339858eb02056d8bdec27036044c2",
+      "updated_at": "2026-10-15T21:11:19Z"
+    },
+    "artifacts/02-venue.md": {
+      "owner": "venue-planner",
+      "status": "done",
+      "sha256": "c757195f20bb5e0c301d90e2bcc71abf5cf4659d10010ac3387308c1de359012",
+      "updated_at": "2026-10-15T21:08:17Z"
+    },
+    "artifacts/03-entertainment.md": {
+      "owner": "entertainment-planner",
+      "status": "done",
+      "sha256": "2a921d18816b4eb95ea6042dd0a48af9485258fef207d3b37e87dcadc86696f3",
+      "updated_at": "2026-10-15T21:16:52Z"
+    },
+    "artifacts/03-logistics.md": {
+      "owner": "logistics-planner",
+      "status": "done",
+      "sha256": "0eb1c10cbe249f72a23d9558f729614f96eb33a7dd222a1a35caf6217be4794a",
+      "updated_at": "2026-10-15T21:17:09Z"
+    },
+    "artifacts/03-catering.md": {
+      "owner": "catering-planner",
+      "status": "done",
+      "sha256": "6b50d04d45d38d39ea8b307eec4c7b47a03937e25b74c634113ed81ccfdeb1a5",
+      "updated_at": "2026-10-15T21:26:21Z"
+    },
+    "artifacts/04-timeline.md": {
+      "owner": "timeline-planner",
+      "status": "done",
+      "sha256": "9095d8831091b852df0de7bba4e9d14da298a9749ea4ea40417621167690a081",
+      "updated_at": "2026-10-15T21:50:05Z"
+    },
+    "artifacts/04-budget.md": {
+      "owner": "budget-aggregator",
+      "status": "done",
+      "sha256": "da575b696f67feeca2942364775f60df50192fe5e367e87345ca1da5684405e8",
+      "updated_at": "2026-10-15T21:50:13Z"
+    },
+    "artifacts/05-validation.md": {
+      "owner": "validator",
+      "status": "done",
+      "sha256": "2ee14890dce5b1bacb93572c9fb08d177b083cedb468eff13e0967ba2926b05a",
+      "updated_at": "2026-10-15T21:55:39Z"
+    },
+    "artifacts/06-event-plan.md": {
+      "owner": "event-plan-builder",
+      "status": "done",
+      "sha256": "f23ae20f2670fb0d8f3fd0098e96776640d536a8ec47a2b2060d87fc0bdef972",
+      "updated_at": "2026-10-15T22:01:06Z"
+    },
+    "output/event-plan.html": {
+      "owner": "html-builder",
+      "status": "done",
+      "sha256": "23c111dc117c9eb2cb6f6938ba4554fd16ddff51bcf0449cb0ac25f4199de04e",
+      "updated_at": "2026-10-15T22:06:08Z"
+    }
+  },
+  "gate_results": {
+    "G1": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "Total 1,850-2,200 PLN (1,943-2,420 with a labelled 5-10% contingency) vs the 4,000 PLN limit. No double-count: the minimum spend is a floor on the catering line and the venue line carries only the 0 PLN hire fee."
+      ],
+      "responsible_agent": null
+    },
+    "G2": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "Sala VIP 40 seated >= 10 guests. Independently re-verified by the validator re-fetching thealchemist.pl/imprezy.html, which returns 'Sala VIP: seated - 40; standing - 40-50'."
+      ],
+      "responsible_agent": null
+    },
+    "G3": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "The confirmed requirement set is empty (no dietary restrictions, no access needs) and is positively evidenced: 03-catering.md records vegetarian and non-alcoholic margins and requests the allergen list; 01-requirements.md records accessibility as not needed."
+      ],
+      "responsible_agent": null
+    },
+    "G4": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "Nine contiguous timeline blocks, each end equal to the next start. The only post-departure block (venue teardown 23:00-23:30) is the venue's own staff acting after guests leave and does not double-book the guest group."
+      ],
+      "responsible_agent": null
+    },
+    "G5": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "Required services are venue + catering only and both have substantive artifacts. 03-entertainment.md and 03-logistics.md are explicitly 'Not applicable' with stated reasons - legitimate plan adaptation, not missing coverage."
+      ],
+      "responsible_agent": null
+    },
+    "G6": {
+      "status": "PASS-N/A",
+      "attempts": 1,
+      "findings": [
+        "Indoor event: the backup section of 02-weather.md reads exactly 'Not applicable - indoor event' with its reason. Date and city are consistent (Fri 2026-10-23, Warsaw) and real Open-Meteo MCP calls are recorded."
+      ],
+      "responsible_agent": null
+    },
+    "G7": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "The validator independently re-fetched 35 cited URLs; all loaded and supported their claims, including the load-bearing price comparators. Two non-load-bearing notes: 02-venue.md S22 over-claims Warsaw for the Cybermachina homepage (the Warsaw branch is on S24, which loads), and S5 returns a non-recommended branch address. Neither affects the recommendation."
+      ],
+      "responsible_agent": null
+    },
+    "G8": {
+      "status": "PASS",
+      "attempts": 1,
+      "findings": [
+        "artifact-validator checks C1-C12 run over all eight artifacts: OVERALL PASS. Noted: 01-requirements.md C4 carries the mandated Costs sentence plus one benign clarifier; 02-venue.md C7 uses additive S<n> labels. The accepted 04-budget.md C7 deviation is recorded separately."
+      ],
+      "responsible_agent": null
+    }
+  },
+  "retry_counters": {
+    "G1": 0,
+    "G2": 0,
+    "G3": 0,
+    "G4": 0,
+    "G5": 0,
+    "G6": 0,
+    "G7": 0,
+    "G8": 1
+  },
+  "approval": {
+    "status": "approved",
+    "approved_at": "2026-10-15T22:03:48Z",
+    "plan_sha256": "f23ae20f2670fb0d8f3fd0098e96776640d536a8ec47a2b2060d87fc0bdef972",
+    "rejected_count": 0,
+    "feedback": []
+  },
+  "notes": [
+    "2026-10-15T20:37:00Z coordinator: run bootstrapped from request \"plan event in Harry Potter style for 10 person on 23 October\"; default 8-step plan recorded, adaptation pending confirmed requirements.",
+    "2026-10-15T20:47:00Z coordinator: requirements-formalizer ran twice (Revision 1 on the raw request, Revision 2 after the user's clarification answers). Step 1 attempts = 2. The user confirmed the final requirements on 2026-10-15 before planning began.",
+    "2026-10-15T20:47:00Z coordinator: 9 clarification topics put to the user: occasion, city, budget+currency, venue type, required services, dietary, date year, drinks, accessibility. Answers: friends' reunion (Harry Potter themed); Warsaw, Poland; 4,000 PLN all-in; indoor; venue + catering only; no dietary restrictions; Friday 2026-10-23; themed welcome drink + soft drinks included with further drinks on guests' own tabs; no access needs.",
+    "2026-10-15T20:49:00Z coordinator: ADAPTATION 1 - entertainment-planner service work skipped: the user explicitly excluded entertainment (music, DJ, costumed host, activities). Its artifact is still written as \"Not applicable - no entertainment required\" so the artifact structure and gate G5 stay stable.",
+    "2026-10-15T20:49:00Z coordinator: ADAPTATION 2 - logistics-planner service work skipped: the required-services list is exactly venue + catering, so no decorations/props, equipment, transport, staffing or external permits are booked. Its artifact is still written as \"Not applicable - no decorations, equipment, transport or staffing required\".",
+    "2026-10-15T20:49:00Z coordinator: ADAPTATION 3 - the Harry Potter theme is a CONTENT requirement, not a service line. It must be delivered by (a) venue character and (b) the catering concept (themed menu + themed welcome drink). This is passed verbatim in the briefs to venue-planner and catering-planner so no purchased styling is invented.",
+    "2026-10-15T20:49:00Z coordinator: indoor event - the weather agent still runs against the real Open-Meteo MCP for the event date, but backup/rain-contingency planning is \"Not applicable - indoor event\". Gate G6 is expected to record PASS-N/A with that reason.",
+    "2026-10-15T20:49:00Z coordinator: MCP smoke test passed before the recon step - open-meteo-mcp-server 2.5.2 connected over stdio and exposed geocoding + weather_forecast, so the weather step can use real data.",
+    "2026-10-15T20:49:00Z coordinator: budget note passed to the recon/services agents - 4,000 PLN is the ALL-IN ceiling for 10 guests and venue + catering are the only cost categories. Venue hire plus any compulsory minimum spend must leave room for catering for 10 guests inside that ceiling.",
+    "2026-10-15T21:08:00Z coordinator: the venue-planner reported labelling its sources S1-S27 with page title, URL, fetch date and what each supports, and stated that every shortlisted and screened venue traces to a page it actually fetched. It also reported that WebSearch returned empty results in its session and that DuckDuckGo/Yandex/SearXNG were CAPTCHA-blocked, so discovery was done via Brave Search plus direct fetches of venue pages. The coordinator has NOT independently verified these URLs; that is left to the validator's G7 check at step 5.",
+    "2026-10-15T21:12:00Z coordinator: artifact-validator run on the recon group (02-venue.md, 02-weather.md). 02-venue.md: OVERALL PASS, 12/12. Noted deviation, not a failure: the agent prefixed each source bullet with an S1..S27 identifier; that is an ADDITION to the required '- <title> - <URL> (fetched YYYY-MM-DD; supports: ...)' shape rather than a replacement of it, and the Details tables cross-reference those ids, so the shape check passes and removing the ids would break the cross-references. 02-weather.md: C7 FAIL - both source bullets use '(accessed 2026-10-15; source of ...)' instead of the mandated '(fetched YYYY-MM-DD; supports: ...)' shape (all three pre-existing sample runs use the mandated shape, and the sibling venue artifact in this same run got it right). Mapped to gate G8 (artifact structure) and to the weather agent; retry_counters.G8 set to 1. Retried immediately, before the services group starts, precisely so there are no downstream dependents to regenerate.",
+    "2026-10-15T21:15:00Z coordinator: G8 retry 1 complete. weather Revision 2 rewrote only the two source bullets into the mandated shape; all figures verified unchanged (8.5/11.3/9.8 C, 6 mm, precipitation_probability_max 11 %, wind 9.2 km/h, gusts 19.4 km/h, WMO code 53, cloud cover 99 %, Warsaw 52.22977/21.01178), the backup section still reads 'Not applicable - indoor event', and '## Costs' still reads 'No costs in this artifact.'. Residual bad wording count is 0. 02-weather.md now passes C1-C12; recon group re-validated OVERALL PASS. Step 2 recon status = done, attempts = 2.",
+    "2026-10-15T21:20:00Z coordinator: USER DECISION recorded - catering is delivered by the VENUE'S OWN KITCHEN, not by an external caterer. The venue-planner had flagged that every shortlisted venue with wizarding character runs its own kitchen and none publishes permission for an outside caterer, and had asked for this trade-off to be surfaced rather than silently applied; the coordinator put the three options to the user, who chose 'Use the venue's own kitchen (Recommended)'. Consequence: (a) the Harry Potter theme stays carried by venue character + the catering concept; (b) there is no separate venue hire fee plus external caterer, so the plan must use ONE food-and-drink bill to avoid double counting; (c) the 'catering' service line is satisfied by the venue's in-house menu, to be specified and costed by the catering-planner.",
+    "2026-10-15T21:20:00Z coordinator: NON-DOUBLE-COUNT COST MODEL passed to the catering-planner and to be passed to the budget-aggregator - the venue line carries only a hire fee (assumed 0 PLN, to be confirmed); the catering line carries the actual food-and-drink bill, which must itself be at or above any compulsory minimum spend. The minimum spend is therefore a FLOOR on the catering line, not an additive venue cost. Entering the venue minimum spend and the catering bill as two separate additive lines would double count the same restaurant bill.",
+    "2026-10-15T21:20:00Z coordinator: budget allocation guidance passed to the catering-planner - of the 4,000 PLN all-in ceiling, roughly 1,500-2,200 PLN is available for food and drink for 10 guests (about 150-220 PLN per person), leaving headroom for a venue hire fee if one turns out to apply. The venue publishes no prices, so all of this remains an estimate until the venue issues a written offer.",
+    "2026-10-15T21:43:53Z state reconciliation (post-incident): the .claude/settings.json hook commands used bare relative paths, and Claude Code resolves hook commands against the session's working directory. Once the session cwd drifted into runs/run-004-harry-potter-party/artifacts the hooks failed with 'can't open file ...\\artifacts\\.claude\\hooks\\no_leak_guard.py' (Errno 2, non-blocking), so writes were no longer recorded here. The hook commands are now anchored with ${CLAUDE_PROJECT_DIR}. Every artifacts entry was re-checked against disk: all six are hash-clean and no file on disk is unrecorded, so no hash refresh was needed. Step 3 services marked done because all three of its artifacts are done and hash-clean, and current_step moved to the next step to run. OUTSTANDING: unlike step 2 recon, no artifact-validator pass for the services group was ever recorded, so the coordinator must run the artifact-validator / gate G8 on 03-catering.md, 03-entertainment.md and 03-logistics.md at resume before starting step 4.",
+    "%s coordinator: artifact-validator applied to the SERVICES group at resume, since the earlier pass was real but could not be recorded while the hooks were failing. Structural checks C1-C7 re-run programmatically against the exact bytes on disk (hashes re-verified unchanged): 03-catering.md C1-C7 PASS with 16 source bullets all in the mandated '<title> - <URL> (fetched YYYY-MM-DD; supports: ...)' shape; 03-entertainment.md and 03-logistics.md C1-C7 PASS, with C6 satisfied via the explicit 'Not applicable' marking plus 'No external sources used (service explicitly excluded - nothing researched)'. C8-C12 verified by inspection: all URLs are real https pages with no placeholders; every price is marked 'price on request' with its estimate basis stated (no unsourced prices); no artifact claims another agent's work (03-catering.md carries a venue hire-fee row explicitly labelled 'venue line, not a catering cost' as a double-count guard); none instructs anyone to write the final HTML or the approval file. Services group OVERALL PASS, 3/3 artifacts, no retries consumed. Step 3 services status = done, attempts = 1.",
+    "%s coordinator: INCIDENT recorded for the run - the session working directory drifted into runs/run-004-harry-potter-party/artifacts during a verification step, and because .claude/settings.json registered the hooks as bare relative commands ('python3 .claude/hooks/<hook>.py') the hooks resolved to a nonexistent path and failed closed. Because they are PreToolUse hooks, this denied every Write/Edit/Bash call in the main session AND in subagent sessions, including absolute-path writes, which halted the run at the step 3 -> step 4 boundary. No artifact was corrupted or lost: all six artifacts and this state file were verified hash-clean afterwards. The fix applied to .claude/settings.json replaces the relative hook commands with 'python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/<hook>.py\"', which makes hook resolution independent of the session cwd. All 23 hook unit tests still pass after the change. This is a genuine repo hardening, not just a local workaround: a committed hook that only resolves from one cwd would fail for anyone running the workflow from a subdirectory.",
+    "2026-10-15T21:51:41Z coordinator: ADAPTATION 4 - catering-planner keeps its normal service work (catering is a required service), but its cost line is the venue's single restaurant bill rather than an external caterer's invoice.",
+    "2026-10-15T21:51:41Z coordinator: artifact-validator applied to the SCHEDULE-AND-COST group. 04-timeline.md C1-C12 PASS: correct title/owner, all six sections in order, 'No costs in this artifact.', no external sources with the reason stated, G4 no-overlap verified by the agent (nine contiguous blocks, each end equal to the next start; the only post-departure block is the venue's own reset and does not double-book the guest group). Independently checked that no PLN figure leaks into the timeline as its own cost - the only 'price on request' strings sit in 'Inputs used' as references to upstream artifacts. 04-budget.md C1-C6 PASS, C8-C10 PASS (no invented URL, no placeholder, every estimate still 'price on request' with its basis, and the contingency is explicitly labelled as the agent's own 5-10% proposal rather than a sourced cost). C7 recorded as PASS-WITH-NOTED-DEVIATION, reasoned explicitly: C7 requires source bullets to have the shape '- <title> - <URL> (fetched YYYY-MM-DD; supports: ...)', and this artifact's six bullets are traceability references to upstream artifacts with no URL because the agent fetched no web pages. The decisive point is that the form mandated by its own definition - the sentence 'No external sources used (aggregated from the cost artifacts listed under Inputs used).' - is present verbatim, and the six bullets are an ADDITION on top of it, not a replacement of it. That is the same principle applied to the venue artifact's S1-S27 labels (addition -> PASS with note) and the opposite of the weather artifact (mandated shape replaced -> FAIL). No invented URL, no placeholder, no unsourced price: everything C7/C8/C10 exist to prevent is absent. Accepted as-is; recorded rather than silently passed over.",
+    "2026-10-15T21:51:41Z coordinator: cross-group dependency checked, not assumed. The budget-aggregator wrote 04-budget.md while 04-timeline.md did not yet exist (the two ran in parallel), and it asked for a budget re-run if the timeline later introduced any timing or overtime cost. Verified: 04-timeline.md carries 'No costs in this artifact.' and contains no cost line of its own - venue setup and teardown are performed by the venue's own staff inside the venue's service, with no overtime or hire implied. No budget re-run required. Step 4 schedule-and-cost status = done, attempts = 1.",
+    "2026-10-15T21:58:24Z coordinator: GATE RESULTS recorded from the validator run - G1 PASS, G2 PASS, G3 PASS, G4 PASS, G5 PASS, G6 PASS-N/A (indoor event), G7 PASS, G8 PASS. No FAIL, so no targeted retry was triggered and no agent was re-run. G7 was verified by the validator actually re-fetching 35 cited URLs rather than by checking their format; all loaded and supported their claims.",
+    "2026-10-15T21:58:24Z coordinator: RISKS CARRIED FORWARD TO APPROVAL, separate from the gate verdicts (all gates PASS, but the plan is not yet bookable). (1) The recommended venue publishes no prices at all, so every figure is 'price on request' built on comparable published Warsaw prices - nothing can be booked until the venue issues a written offer, and G1 must be re-checked against the real minimum spend before any booking. (2) A minimum spend sized for the 40-seat Sala VIP applied to a party of 10 is the most plausible way the budget breaks; it is bounded today (a floor up to about 3,900 PLN still passes G1) and above about 4,000 PLN the coordinator must surface the choice rather than absorb it. (3) The venue's menu is published only as images, so the set menu was read from its own text and from independent coverage and must be confirmed. (4) Timeline start time, venue access hours and course durations are assumptions. (5) Availability for Friday 2026-10-23 is unconfirmed at every candidate, 8 days out.",
+    "2026-10-15T22:01:57Z coordinator: gate G8 re-run on the synthesis output as required. 06-event-plan.md follows templates/event-plan-template.md exactly - correct single title line, owner agent recorded, and all eleven required sections present in order (Summary, Event overview, Venue, Weather outlook and contingency, Catering, Entertainment, Logistics, Run of show, Budget summary, Risks and open issues, Sources); all 35 source bullets in the mandated '<title> - <URL> (fetched YYYY-MM-DD; supports: ...)' shape; file is valid UTF-8 with no CRLF. G8 stays PASS on the plan.",
+    "2026-10-15T22:01:57Z coordinator: pre-emptive leak check run on 06-event-plan.md against the no-leak-guard token list. The only hit is the template-mandated header line '- **Run:** run-004-harry-potter-party', which every artifact carries by design. It MUST be stripped when rendering the user-facing HTML - the html-builder will be told explicitly to omit the internal header block (owner agent / run / revision / status). No other internal name, path or state key appears in the plan.",
+    "2026-10-15T22:01:57Z coordinator: step 6 synthesis status = done. Execution now stops at step 7 (human approval). No HTML was generated, and no approval file was written or simulated - both are human-gated by design. Waiting for the user to run /approve-event run-004-harry-potter-party or /reject-event run-004-harry-potter-party <feedback>.",
+    "2026-10-15T22:04:42Z coordinator: HUMAN APPROVAL RECORDED for run-004-harry-potter-party. The user invoked the human-only /approve-event command, and scripts/approve_event.py wrote approval.json {run_id, plan_sha256 f23ae20f2670fb0d8f3fd0098e96776640d536a8ec47a2b2060d87fc0bdef972, approved_at 2026-10-15T22:03:48Z}. The coordinator did NOT write that file and did not simulate approval. Verified independently: the stored plan_sha256 matches the SHA-256 of artifacts/06-event-plan.md on disk, all eight gates are PASS or PASS-N/A, and state approval.status is 'approved'. Any later revision of the plan will invalidate this approval, and approval-gate-guard enforces that. Step 7 approval status = done; proceeding to step 8 html."
+  ]
+}
